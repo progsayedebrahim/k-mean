@@ -37,12 +37,12 @@ public class kmean   {
           newsession = SparkSession.builder()
                   .appName("kmean")
                   .master("local[*]")
-                  .config("spark.sql.warehouse.dir", "file:///D://")
+                  .config("spark.sql.warehouse.dir", "file:///#your diractory //")
                   .getOrCreate();
     
         Dataset<Row> data = newsession
                 .read().option("header", "true")
-                .csv("C://Users//Sayed//Documents//NetBeansProjects//hack_data.csv");
+                .csv("your path for dataset");
         data.show();
           JavaRDD<kmeandatasetclass> data1 = data.toJavaRDD().map((Row t1) -> {
               // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
